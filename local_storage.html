@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCAL_STORAGE </title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    button{
+        margin-top: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+        color:white;
+        background-color: rgb(127, 127, 153);       
+    }
+    input{
+        background-color: rgb(241, 239, 219);
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    label{
+        font-weight: bold;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+</style>
+<body>
+    <p style="background-color: rgb(120, 221, 120); display: inline; font-size:20px;"></p>
+    <h1>Local Storage Exercise</h1>
+    <div>
+        <!-- <form> -->
+            <label for="">NAME</label><br>
+            <input type="text" id="name" placeholder="Enter Name" style="margin-bottom: 13px; height:20px;"/><br>
+            <label for="" >AGE</label><br>
+            <input type="number" id="age" placeholder="Enter Age" style="height:20px;"/><br>
+            <button onclick="submit()" id="submit">SUBMIT</button>
+            <button onclick="print()">PRINT</button>
+            
+        <!-- </form> -->
+    </div>
+
+    <script>
+        // let myForm=document.querySelector("form")
+        
+        let NameInp=document.getElementById("name")
+        let AgeInp=document.getElementById("age")
+        
+
+
+        // myForm.addEventListener("submit",function(e){
+        //     e.preventDefault();
+         function submit(){
+            document.getElementById("submit").style.backgroundColor="green";
+            let Name=NameInp.value
+            let Age=AgeInp.value
+            localStorage.setItem("Name",Name)
+            localStorage.setItem("Age",Age)
+            alert("Form Submitted Successfully")
+            alert("Take a Printout for future purposes")
+            document.querySelector("p").innerText="Your Form has been Submitted"
+
+            reset()
+
+         }
+           
+        // })
+         function print(){
+            
+            // Display.innerText=`${UserName}`
+            location.href="PrintForm.html";
+
+         }
+         function reset(){
+            NameInp.value="";
+            AgeInp.value="";
+         }
+       
+        
+       
+    </script>
+    
+</body>
+</html>
