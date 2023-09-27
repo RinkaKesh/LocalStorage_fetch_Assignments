@@ -29,6 +29,7 @@
 <body>
     <p style="background-color: rgb(120, 221, 120); display: inline; font-size:20px;"></p>
     <h1>Local Storage Exercise</h1>
+    <p id="newPage"></p>
     <div>
         <!-- <form> -->
             <label for="">NAME</label><br>
@@ -36,7 +37,7 @@
             <label for="" >AGE</label><br>
             <input type="number" id="age" placeholder="Enter Age" style="height:20px;"/><br>
             <button onclick="submit()" id="submit">SUBMIT</button>
-            <button onclick="print()">PRINT</button>
+            <button onclick="view()">VIEW</button>
             
         <!-- </form> -->
     </div>
@@ -66,11 +67,12 @@
          }
            
         // })
-         function print(){
-            
-            // Display.innerText=`${UserName}`
-            location.href="PrintForm.html";
+         function view(){
+          location.href="PrintForm.html";
+        // <a href="PrintForm.html" target="_blank"></a>
 
+        
+          
          }
          function reset(){
             NameInp.value="";
